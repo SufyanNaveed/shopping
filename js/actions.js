@@ -83,12 +83,27 @@ $(document).ready(function(){
     net_amount();
 
     $('.item-qty').change(function(){
-        var qty = $(this).val();
+        var qty = $(this).val(); 
+        var itemId = $(this).siblings('.item-id').val();
         var price = $(this).siblings('.item-price').val();
-        var new_price = (qty * price);
-        $(this).parent().siblings().children('.sub-total').html(new_price);
-        net_amount();
-        net_qty();
+        $.ajax({
+            url: 'php_files/script.php',
+            type: "POST",
+            data: {id : itemId, qty : qty}, 
+            success: function(data){
+                if(data == 1){
+                    var new_price = (qty * price);
+                    $(this).parent().siblings().children('.sub-total').html(new_price);
+                    net_amount();
+                    net_qty();
+                }else{ 
+                    $(this).siblings('.qty_error').html('Out of Stock');
+                }
+            }
+        });
+
+
+        
     });
 
     function net_qty(){
