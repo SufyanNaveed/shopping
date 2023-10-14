@@ -28,7 +28,12 @@
                 <ul class="menu-list">
                     <li><a href="<?php echo $hostname; ?>">Home</a></li>
                     <li><a href="all_products.php">All Products</a></li>
-                <li><a href="contact.php">Contact Us</a></li>
+                    <li><?php if(isset($_SESSION['user_role'])){ ?>
+                            <a href="user_orders.php">Delivery Information</a>
+                        <?php } else { ?>
+                            <a href="#" data-toggle="modal" data-target="#userLogin_form">Delivery Information</a></li>
+                        <?php } ?>
+                    <li><a href="contact.php">Contact Us</a></li>
                 </ul>
             </div>
             <div class="col-md-3">
