@@ -35,7 +35,7 @@
                                         <td>
                                             <input class="form-control item-qty" type="number" value="1"/>
                                             <input type="hidden" class="item-id" value="<?php echo $row['product_id']; ?>"/>
-                                            <input type="hidden" class="item-price" value="<?php echo $row['product_price']; ?>"/>
+                                            <input type="hidden" class="item-price" value="<?php echo $row['product_price']; ?>" />
                                         </td>
                                         <td><?php echo $cur_format; ?> <span class="sub-total"><?php echo $row['product_price']; ?></span></td>
                                         <td>
@@ -52,7 +52,7 @@
                                 <a class="btn btn-sm btn-primary" href="<?php echo $hostname; ?>" >Continue Shopping</a>
                                 <?php if(isset($_SESSION['user_role'])){ ?>
 
-                                <form action="instamojo.php?total=<?php echo $cur_format; ?>" class="checkout-form pull-right" method="POST">
+                                <form action="instamojo.php" class="checkout-form pull-right" method="POST">
                                     <?php
                                         $product_id = '';
                                         foreach($result as $row){
@@ -83,3 +83,6 @@
 
 
 <?php include 'footer.php'; ?>
+
+
+<script>
