@@ -36,7 +36,7 @@
                                             <input class="form-control item-qty" type="number" value="1"/>
                                             <input type="hidden" class="item-id" value="<?php echo $row['product_id']; ?>"/>
                                             <input type="hidden" class="item-price" value="<?php echo $row['product_price']; ?>" />
-                                            <span class="qty_error" style="color:red"></span>
+                                            <span id="qty_error_<?php echo $row['product_id'] ; ?>" style="color:red"></span>
                                         </td>
                                         <td><?php echo $cur_format; ?> <span class="sub-total"><?php echo $row['product_price']; ?></span></td>
                                         <td>

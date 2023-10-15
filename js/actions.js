@@ -97,7 +97,7 @@ $(document).ready(function(){
                     net_amount();
                     net_qty();
                 }else{ 
-                    $(this).siblings('.qty_error').html('Out of Stock');
+                    $('#qty_error_'+itemId).html('Out of Stock');
                 }
             }
         });
