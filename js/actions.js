@@ -97,6 +97,7 @@ $(document).ready(function(){
                     net_amount();
                     net_qty();
                 }else{ 
+                    $(this).val(parseInt(qty) - parseInt(1));
                     $('#qty_error_'+itemId).html('Out of Stock');
                 }
             }
